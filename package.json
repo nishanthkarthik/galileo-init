@@ -1,0 +1,23 @@
+{
+  "name": "galileo-init",
+  "version": "1.0.0",
+  "description": "Galileo base template",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishanthkarthik/galileo-init.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nishanthkarthik/galileo-init/issues"
+  },
+  "homepage": "https://github.com/nishanthkarthik/galileo-init#readme",
+  "dependencies": {
+    "mraa": "^0.10.1"
+  }
+}
