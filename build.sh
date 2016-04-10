@@ -4,7 +4,7 @@ set -e
 set -x
 
 #Galileo IP
-GALILEO_IP="192.168.1.10"
+GALILEO_IP="192.168.1.9"
 
 
 #Kill all instances of node

@@ -3,7 +3,7 @@ set -e
 #set -x
 
 #Galileo IP
-GALILEO_IP="192.168.1.10"
+GALILEO_IP="192.168.1.9"
 
 #echo "Enter Galileo IP" 
 #read GALILEO_IP
@@ -14,7 +14,7 @@ ssh root@$GALILEO_IP date -s @`( date -u +"%s" )`
 
 #Kill all instances of node and stop xdk-daemon
 echo "> killing all node instances on galileo"
-ssh root@$GALILEO_IP killall node
+#ssh root@$GALILEO_IP killall node
 ssh root@$GALILEO_IP systemctl stop xdk-daemon
 
 #SSH to galileo and check if directory exists
@@ -31,6 +31,11 @@ scp src.tar root@$GALILEO_IP:node_deploy/
 echo "> extracting archive on galileo"
 ssh root@$GALILEO_IP << EOF
 	tar xvf ~/node_deploy/src.tar -C ~/node_deploy
+	rm ~/node_deploy/build.sh
+	rm ~/node_deploy/deploy.sh
 EOF
+
+echo "> cleaning up"
+rm src.tar
 
 echo "> deploy complete"
